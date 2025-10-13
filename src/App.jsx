@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Typed from "typed.js";
+import hero from './assets/hero.png';
+
 
 function App() {
   const [formData, setFormData] = useState({
@@ -109,8 +111,9 @@ function App() {
   </div>
 
   <div className="hero-image">
-    <div className="image-placeholder">👨‍💻</div>
-  </div>
+  <img src={hero} alt="Developer at desk" className="hero-img" />
+</div>
+
 </section>
 
 

@@ -310,12 +310,16 @@ html {
   flex-wrap: wrap;
 }
 
-.hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeInRight 1s ease-out;
+.hero-image { 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+}
+.hero-img { 
+  width: 100%; 
+  max-width: 520px; 
+  height: auto; 
+  border-radius: 16px; 
 }
 
 @keyframes fadeInRight {
