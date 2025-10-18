@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Typed from "typed.js";
 import hero from './assets/hero.png';
@@ -30,6 +31,7 @@ import jupyterIcon from './assets/skills/jupyter.png';
 // import pythonIcon from './assets/skills/python.png';
 // etc.
 
+
 const skillsData = [
   { name: 'Java', icon: javaIcon, category: 'backend', isImage: true },
   { name: 'C++', icon: cppIcon, category: 'backend', isImage: true },
@@ -55,6 +57,11 @@ const skillsData = [
   
 ];
 
+// university logo import 
+import uicLogo from './assets/education/uic.png';
+import muLogo from './assets/education/mu.png';
+
+
 function App() {
   const [formData, setFormData] = useState({
     name: '',
@@ -63,6 +70,30 @@ function App() {
   });
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const experienceRef = useRef(null);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const section = experienceRef.current;
+    if (!section) return;
+
+    const experienceCard = section.querySelector('.experience-card');
+    if (!experienceCard) return;
+
+    const rect = experienceCard.getBoundingClientRect();
+    const triggerPoint = window.innerHeight * 0.8;
+
+    if (rect.top < triggerPoint) {
+      experienceCard.classList.add('visible');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -249,52 +280,95 @@ function App() {
         </div>
       </section>
 
-      {/* Experience Timeline */}
-      <section id="experience" className="experience">
-        <div className="container">
-          <h2 className="section-title">Experience</h2>
-          <div className="timeline">
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <h3>Senior Full Stack Developer</h3>
-                <p className="company">Tech Company Inc.</p>
-                <p className="duration">Jan 2022 - Present</p>
-                <p className="description">
-                  Leading development of web applications, mentoring junior developers, 
-                  and implementing best practices across the team.
-                </p>
-              </div>
-            </div>
+      {/* ===== EXPERIENCE SECTION ===== */}
+<section id="experience" className="experience" ref={experienceRef}>
+  <div className="container">
+    <h2 className="section-title">Experience</h2>
 
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <h3>Full Stack Developer</h3>
-                <p className="company">Digital Solutions Ltd.</p>
-                <p className="duration">Jun 2020 - Dec 2021</p>
-                <p className="description">
-                  Developed and maintained multiple client projects, focusing on 
-                  responsive design and performance optimization.
-                </p>
-              </div>
-            </div>
+    <div className="experience-card">
+      <div className="experience-left">
+        <div className="testimonial">
+          <p className="stars">★★★★★</p>
+          <p>
+            Priyank helped bring our booking and payment flow to life with consistent work.
+            He was dependable and quick to pick up new tasks during a fast-paced development sprint.
+          </p>
+          <img src="/assets/bookmyice.png" alt="BookMyIce" className="testimonial-logo" />
+        </div>
+      </div>
 
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <h3>Junior Web Developer</h3>
-                <p className="company">StartUp Innovations</p>
-                <p className="duration">Jan 2019 - May 2020</p>
-                <p className="description">
-                  Built user interfaces and collaborated with designers to create 
-                  engaging web experiences.
-                </p>
-              </div>
-            </div>
+      <div className="experience-right">
+        <div className="experience-header">
+          <img src="/assets/bookmyice.png" alt="Company Logo" className="company-icon" />
+          <div>
+            <h3>Web Developer Intern</h3>
+            <p>📍 India | February 2022 – September 2022</p>
           </div>
         </div>
-      </section>
+
+        <h4>Responsibilities</h4>
+        <ul>
+          <li>Developed responsive pages using HTML, CSS, and JavaScript ensuring seamless layouts across devices.</li>
+          <li>Integrated payment and checkout workflows to support secure online facility bookings.</li>
+          <li>Collaborated with designers to implement clean UI components from wireframes and prototypes.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{/* ===== EDUCATION SECTION ===== */}
+<section id="education" className="education">
+  <div className="container">
+    <h2 className="section-title">Education</h2>
+
+    <div className="education-timeline">
+      <div className="education-item left">
+        <div className="education-content">
+        <div className="education-header">
+        <img src={uicLogo} alt="University Logo" className="edu-logo-uic" />
+          <h3>University of Illinois Chicago</h3>
+        </div>
+          <p className="degree">Master's of Science – Management Infomration Systems</p>
+          <p><strong>Courses:</strong></p>
+          <ul>
+            <li>Enterprise Application Development</li>
+            <li>Advanced Database Management System</li>
+            <li>Data Mining for Business</li>
+            <li>Object Oriented Programming</li>
+            <li>Statistics for Management</li>
+            <li>Project Management</li>
+            <li>Supply Chain Management</li>
+            <li>Intro to Marketing</li>
+            <li>Intro to Operations Management</li>
+          </ul>
+          <span className="year">Aug 2024 – May 2026</span>
+        </div>
+      </div>
+
+      <div className="education-item right">
+        <div className="education-content">
+        <div className="education-header">
+        <img src={muLogo} alt="University Logo" className="edu-logo-mu" />
+        <h3>University of Mumbai</h3>
+        </div>
+          <p className="degree">Bachelor's of Engineering - Electronics and Telecommunication</p>
+          <p><strong>Courses:</strong></p>
+          <ul>
+            <li>Signals and Systems</li>
+            <li>Digital Electronics</li>
+            <li>Computer Networking</li>
+            <li>Mobile Communications</li>
+            <li>Database Management Systems</li>
+            <li>Mathematics</li>
+          </ul>
+          <span className="year"> July 2018 – June 2022</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Certifications Section */}
       <section id="certifications" className="certifications">
@@ -346,7 +420,6 @@ function App() {
               <div className="contact-details">
                 <p>📧 rugvedredkar02@gmail.com.com</p>
                 <p>📍 chicago, United States</p>
-                <p>💼 LinkedIn | GitHub | Twitter</p>
               </div>
             </div>
 
