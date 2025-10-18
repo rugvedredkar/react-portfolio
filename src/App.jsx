@@ -5,33 +5,54 @@ import hero from './assets/hero.png';
 
 // Import skill icons
 import awsIcon from './assets/skills/aws.png';
+import pythonIcon from './assets/skills/python.png';
+import javaIcon from './assets/skills/java.png';
+import htmlIcon from './assets/skills/html.png';
+import flaskIcon from './assets/skills/flask.png';
+import nodeIcon from './assets/skills/nodejs.png';
+import jsIcon from './assets/skills/js.png';
+import sqlIcon from './assets/skills/sqlite.png';
+import vsIcon from './assets/skills/vs.png';
+import dockerIcon from './assets/skills/docker.png';
+import azureIcon from './assets/skills/azure.png';
+import cppIcon from './assets/skills/c++.png';
+import cssIcon from './assets/skills/css.png';
+import tableauIcon from './assets/skills/tableau.png';
+import reactIcon from './assets/skills/react.png';
+import gcIcon from './assets/skills/gc.png';
+import githubIcon from './assets/skills/github.png';
+import eclipseIcon from './assets/skills/eclipse.png';
+import pandasIcon from './assets/skills/pandas.png';
+import pycharmIcon from './assets/skills/pycharm.png';
+import jupyterIcon from './assets/skills/jupyter.png';
 // Add more imports as you add more skill icons
 // import javaIcon from './assets/skills/java.png';
 // import pythonIcon from './assets/skills/python.png';
 // etc.
 
 const skillsData = [
-  { name: 'Java', icon: '☕', category: 'backend', isImage: false },
-  { name: 'C++', icon: '⚙️', category: 'backend', isImage: false },
-  { name: 'Python', icon: '🐍', category: 'backend', isImage: false },
-  { name: 'Flask', icon: '🌶️', category: 'backend', isImage: false },
-  { name: 'Looker Studio', icon: '📊', category: 'tools', isImage: false },
-  { name: 'Neo4j', icon: '🔗', category: 'database', isImage: false },
-  { name: 'SQL (MySQL)', icon: '🗄️', category: 'database', isImage: false },
-  { name: 'Pandas', icon: '🐼', category: 'data', isImage: false },
-  { name: 'Tableau', icon: '📈', category: 'tools', isImage: false },
-  { name: 'Power BI', icon: '📊', category: 'tools', isImage: false },
-  { name: 'HTML5', icon: '🌐', category: 'frontend', isImage: false },
-  { name: 'CSS3', icon: '🎨', category: 'frontend', isImage: false },
-  { name: 'JavaScript', icon: '⚡', category: 'frontend', isImage: false },
-  { name: 'Django', icon: '🎸', category: 'backend', isImage: false },
+  { name: 'Java', icon: javaIcon, category: 'backend', isImage: true },
+  { name: 'C++', icon: cppIcon, category: 'backend', isImage: true },
+  { name: 'Python', icon: pythonIcon, category: 'backend', isImage: true },
+  { name: 'HTML5', icon: htmlIcon, category: 'frontend', isImage: true },
+  { name: 'CSS3', icon: cssIcon, category: 'frontend', isImage: true },
+  { name: 'JavaScript', icon: jsIcon, category: 'frontend', isImage: true },
+  { name: 'NodeJs', icon: nodeIcon, category: 'database', isImage: true },
+  { name: 'React', icon: reactIcon, category: 'tools', isImage: true },
+  { name: 'Flask', icon: flaskIcon, category: 'backend', isImage: true },
+  { name: 'Vs code', icon: vsIcon, category: 'tools', isImage: true },
+  { name: 'Pycharm', icon: pycharmIcon, category: 'tools', isImage: true },
+  { name: 'Eclipse', icon: eclipseIcon, category: 'bigdata', isImage: true },
+  { name: 'Tableau', icon: tableauIcon, category: 'tools', isImage: true },
+  { name: 'Pandas', icon: pandasIcon, category: 'data', isImage: true },
+  { name: 'SQLite', icon: sqlIcon, category: 'database', isImage: true },
+  { name: 'Jupyter Notebook', icon: jupyterIcon, category: 'backend', isImage: true },
   { name: 'AWS', icon: awsIcon, category: 'cloud', isImage: true },
-  { name: 'Azure', icon: '☁️', category: 'cloud', isImage: false },
-  { name: 'Google Cloud', icon: '☁️', category: 'cloud', isImage: false },
-  { name: 'Apache Hadoop', icon: '🐘', category: 'bigdata', isImage: false },
-  { name: 'Git', icon: '📂', category: 'tools', isImage: false },
-  { name: 'Docker', icon: '🐳', category: 'tools', isImage: false },
-  { name: 'Kubernetes', icon: '☸️', category: 'tools', isImage: false },
+  { name: 'Azure', icon: azureIcon, category: 'cloud', isImage: true },
+  { name: 'Google Cloud', icon: gcIcon, category: 'cloud', isImage: true },
+  { name: 'GitHub', icon: githubIcon, category: 'tools', isImage: true },
+  { name: 'Docker', icon: dockerIcon, category: 'tools', isImage: true }
+  
 ];
 
 function App() {
