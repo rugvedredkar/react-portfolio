@@ -3,6 +3,36 @@ import './App.css';
 import Typed from "typed.js";
 import hero from './assets/hero.png';
 
+// Import skill icons
+import awsIcon from './assets/skills/aws.png';
+// Add more imports as you add more skill icons
+// import javaIcon from './assets/skills/java.png';
+// import pythonIcon from './assets/skills/python.png';
+// etc.
+
+const skillsData = [
+  { name: 'Java', icon: '☕', category: 'backend', isImage: false },
+  { name: 'C++', icon: '⚙️', category: 'backend', isImage: false },
+  { name: 'Python', icon: '🐍', category: 'backend', isImage: false },
+  { name: 'Flask', icon: '🌶️', category: 'backend', isImage: false },
+  { name: 'Looker Studio', icon: '📊', category: 'tools', isImage: false },
+  { name: 'Neo4j', icon: '🔗', category: 'database', isImage: false },
+  { name: 'SQL (MySQL)', icon: '🗄️', category: 'database', isImage: false },
+  { name: 'Pandas', icon: '🐼', category: 'data', isImage: false },
+  { name: 'Tableau', icon: '📈', category: 'tools', isImage: false },
+  { name: 'Power BI', icon: '📊', category: 'tools', isImage: false },
+  { name: 'HTML5', icon: '🌐', category: 'frontend', isImage: false },
+  { name: 'CSS3', icon: '🎨', category: 'frontend', isImage: false },
+  { name: 'JavaScript', icon: '⚡', category: 'frontend', isImage: false },
+  { name: 'Django', icon: '🎸', category: 'backend', isImage: false },
+  { name: 'AWS', icon: awsIcon, category: 'cloud', isImage: true },
+  { name: 'Azure', icon: '☁️', category: 'cloud', isImage: false },
+  { name: 'Google Cloud', icon: '☁️', category: 'cloud', isImage: false },
+  { name: 'Apache Hadoop', icon: '🐘', category: 'bigdata', isImage: false },
+  { name: 'Git', icon: '📂', category: 'tools', isImage: false },
+  { name: 'Docker', icon: '🐳', category: 'tools', isImage: false },
+  { name: 'Kubernetes', icon: '☸️', category: 'tools', isImage: false },
+];
 
 function App() {
   const [formData, setFormData] = useState({
@@ -77,45 +107,42 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      {/* Hero Section */}
-<section id="home" className="hero">
-  <div className="hero-content">
-    <h1 className="hero-title">
-      Hi, I'm <span className="highlight">Rugved Redkar</span>
-    </h1>
+      <section id="home" className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Hi, I'm <span className="highlight">Rugved Redkar</span>
+          </h1>
 
-    {/* Typed.js animated subtitle */}
-    <p className="hero-subtitle">
-      <span ref={el => {
-        if (el && !el.typed) {
-          el.typed = new Typed(el, {
-            strings: ['Full Stack Developer', 'Data Engineer', 'Web App Developer'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 1000,
-            loop: true,
-          });
-        }
-      }} />
-    </p>
+          {/* Typed.js animated subtitle */}
+          <p className="hero-subtitle">
+            <span ref={el => {
+              if (el && !el.typed) {
+                el.typed = new Typed(el, {
+                  strings: ['Full Stack Developer', 'Data Engineer', 'Web App Developer'],
+                  typeSpeed: 50,
+                  backSpeed: 30,
+                  backDelay: 1000,
+                  loop: true,
+                });
+              }
+            }} />
+          </p>
 
-    <p className="hero-description">
-      I create beautiful and functional web experiences. Passionate about 
-      building innovative solutions that make a difference.
-    </p>
+          <p className="hero-description">
+            I create beautiful and functional web experiences. Passionate about 
+            building innovative solutions that make a difference.
+          </p>
 
-    <div className="hero-buttons">
-      <a href="#projects" className="btn btn-primary">View My Work</a>
-      <a href="#contact" className="btn btn-secondary">Get In Touch</a>
-    </div>
-  </div>
+          <div className="hero-buttons">
+            <a href="#projects" className="btn btn-primary">View My Work</a>
+            <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
 
-  <div className="hero-image">
-  <img src={hero} alt="Developer at desk" className="hero-img" />
-</div>
-
-</section>
-
+        <div className="hero-image">
+          <img src={hero} alt="Developer at desk" className="hero-img" />
+        </div>
+      </section>
 
       {/* Projects Section */}
       <section id="projects" className="projects">
@@ -124,35 +151,36 @@ function App() {
           <div className="projects-grid">
             <div className="project-card">
               <div className="project-image">📱</div>
-              <h3>E-Commerce Platform</h3>
-              <p>A full-stack e-commerce application with payment integration and real-time inventory management.</p>
+              <h3>Data Migration</h3>
+              <p>A backend automation project that streamlined large-scale data transfer between client databases and the Distribution Management System.</p>
               <div className="project-tags">
-                <span className="tag">React</span>
-                <span className="tag">Node.js</span>
-                <span className="tag">MongoDB</span>
+                <span className="tag">Java</span>
+                <span className="tag">SQL Server</span>
               </div>
               <a href="#" className="project-link">View Project →</a>
             </div>
 
             <div className="project-card">
               <div className="project-image">🎨</div>
-              <h3>Portfolio Website</h3>
-              <p>A modern, responsive portfolio website with smooth animations and interactive elements.</p>
+              <h3>Schedulerr.com</h3>
+              <p>A full-stack meeting scheduling application with real-time conflict detection, Google OAuth login, and cloud deployment for seamless collaboration.</p>
               <div className="project-tags">
                 <span className="tag">React</span>
                 <span className="tag">CSS3</span>
-                <span className="tag">JavaScript</span>
+                <span className="tag">Flask</span>
+                <span className="tag">SQLite3</span>
+                <span className="tag">AWS</span>
               </div>
               <a href="#" className="project-link">View Project →</a>
             </div>
 
             <div className="project-card">
               <div className="project-image">📊</div>
-              <h3>Data Analytics Dashboard</h3>
-              <p>Interactive dashboard for visualizing complex data sets with real-time updates.</p>
+              <h3>United Airlines Analytics Dashboard</h3>
+              <p>A Tableau dashboard analyzing 1M+ 2023 flight records to evaluate delays and cancellations, revealing United's 10% higher delay rate and key improvement insights.</p>
               <div className="project-tags">
-                <span className="tag">React</span>
-                <span className="tag">D3.js</span>
+                <span className="tag">Tableau</span>
+                <span className="tag">Data Visualization</span>
                 <span className="tag">Python</span>
               </div>
               <a href="#" className="project-link">View Project →</a>
@@ -160,12 +188,12 @@ function App() {
 
             <div className="project-card">
               <div className="project-image">🤖</div>
-              <h3>AI Chatbot</h3>
-              <p>Intelligent chatbot with natural language processing capabilities for customer support.</p>
+              <h3>InvisibleCloak</h3>
+              <p>A computer vision Python project that overlays a dynamic invisibility effect using real-time background subtraction and chroma key techniques to mask objects in video.</p>
               <div className="project-tags">
                 <span className="tag">Python</span>
-                <span className="tag">TensorFlow</span>
-                <span className="tag">Flask</span>
+                <span className="tag">OpenCV</span>
+                <span className="tag">Image Processing</span>
               </div>
               <a href="#" className="project-link">View Project →</a>
             </div>
@@ -173,53 +201,29 @@ function App() {
         </div>
       </section>
 
-      {/* Skills Section */}
+      {/* Skills Section - New Icon Grid Layout */}
       <section id="skills" className="skills">
         <div className="container">
           <h2 className="section-title">Skills</h2>
-          <div className="skills-categories">
-            <div className="skill-category">
-              <h3>Frontend</h3>
-              <div className="skill-items">
-                <span className="skill-item">HTML5</span>
-                <span className="skill-item">CSS3</span>
-                <span className="skill-item">JavaScript</span>
-                <span className="skill-item">React</span>
-                <span className="skill-item">Vue.js</span>
+          <div className="skills-grid">
+            {skillsData.map((skill, index) => (
+              <div 
+                key={index} 
+                className="skill-card"
+                style={{ animationDelay: `${index * 0.05}s` }}
+              >
+                <div className="skill-icon-wrapper">
+                  <div className="skill-icon">
+                    {skill.isImage ? (
+                      <img src={skill.icon} alt={skill.name} className="skill-icon-img" />
+                    ) : (
+                      skill.icon
+                    )}
+                  </div>
+                </div>
+                <p className="skill-name">{skill.name}</p>
               </div>
-            </div>
-
-            <div className="skill-category">
-              <h3>Backend</h3>
-              <div className="skill-items">
-                <span className="skill-item">Node.js</span>
-                <span className="skill-item">Python</span>
-                <span className="skill-item">Java</span>
-                <span className="skill-item">Express</span>
-                <span className="skill-item">Django</span>
-              </div>
-            </div>
-
-            <div className="skill-category">
-              <h3>Database</h3>
-              <div className="skill-items">
-                <span className="skill-item">MongoDB</span>
-                <span className="skill-item">MySQL</span>
-                <span className="skill-item">PostgreSQL</span>
-                <span className="skill-item">Firebase</span>
-              </div>
-            </div>
-
-            <div className="skill-category">
-              <h3>Tools & Others</h3>
-              <div className="skill-items">
-                <span className="skill-item">Git</span>
-                <span className="skill-item">Docker</span>
-                <span className="skill-item">AWS</span>
-                <span className="skill-item">Figma</span>
-                <span className="skill-item">Agile</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -374,7 +378,7 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2024 John Doe. All rights reserved.</p>
+          <p>&copy; 2024 Rugved Redkar. All rights reserved.</p>
         </div>
       </footer>
     </div>
