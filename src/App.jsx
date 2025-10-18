@@ -344,8 +344,8 @@ function App() {
                 Feel free to reach out!
               </p>
               <div className="contact-details">
-                <p>📧 johndoe@example.com</p>
-                <p>📍 New York, United States</p>
+                <p>📧 rugvedredkar02@gmail.com.com</p>
+                <p>📍 chicago, United States</p>
                 <p>💼 LinkedIn | GitHub | Twitter</p>
               </div>
             </div>
@@ -398,10 +398,29 @@ function App() {
 
       {/* Footer */}
       <footer className="footer">
-        <div className="container">
-          <p>&copy; 2024 Rugved Redkar. All rights reserved.</p>
-        </div>
-      </footer>
+  <div className="footer-container">
+    <p className="footer-left">Terms & Conditions</p>
+
+    <div className="footer-socials">
+      <a href="https://www.instagram.com/rugved_redkar/" target="_blank" rel="noreferrer" className="footer-icon">
+        <i className="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1JQgmkvvCr/" target="_blank" rel="noreferrer" className="footer-icon">
+        <i className="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://github.com/rugvedredkar" target="_blank" rel="noreferrer" className="footer-icon">
+        <i className="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/rugvedredkar02" target="_blank" rel="noreferrer" className="footer-icon">
+        <i className="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+
+    <p className="footer-right">© 2025 Rugved Redkar. All rights reserved.</p>
+  </div>
+</footer>
+
+
     </div>
   );
 }
