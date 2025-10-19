@@ -61,6 +61,9 @@ const skillsData = [
 import uicLogo from './assets/education/uic.png';
 import muLogo from './assets/education/mu.png';
 
+//experience logo import
+import c2lLogo from './assets/experience/c2l.png';
+import awaitingLogo from './assets/experience/awaiting.png';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -290,31 +293,62 @@ useEffect(() => {
         <div className="testimonial">
           <p className="stars">★★★★★</p>
           <p>
-            Priyank helped bring our booking and payment flow to life with consistent work.
-            He was dependable and quick to pick up new tasks during a fast-paced development sprint.
+          Rugved played a key role in automating backend processes and improving database efficiency. 
+          His structured approach and debugging skills reduced data issues across multiple releases.
           </p>
-          <img src="/assets/bookmyice.png" alt="BookMyIce" className="testimonial-logo" />
-        </div>
+          <img src={c2lLogo} alt="Company Logo" className="company-icon"  />   </div>
       </div>
 
       <div className="experience-right">
         <div className="experience-header">
-          <img src="/assets/bookmyice.png" alt="Company Logo" className="company-icon" />
           <div>
-            <h3>Web Developer Intern</h3>
-            <p>📍 India | February 2022 – September 2022</p>
+            <h3>Full Stack Software Developer</h3>
+            <p>📍 India | November 2022 – August 2024</p>
           </div>
         </div>
 
         <h4>Responsibilities</h4>
         <ul>
-          <li>Developed responsive pages using HTML, CSS, and JavaScript ensuring seamless layouts across devices.</li>
-          <li>Integrated payment and checkout workflows to support secure online facility bookings.</li>
-          <li>Collaborated with designers to implement clean UI components from wireframes and prototypes.</li>
+          <li>Built backend modules in Java, improving system performance by 25%.</li>
+          <li>Optimized 50+ SQL queries, cutting report generation time by 60%. </li>
+          <li>Debugged client issues via Jira, improving delivery timelines by 40%.</li>
+          <li>Led a 3-member team to deliver Data Migration for 10M+ policy records in Drop 1.</li>
         </ul>
       </div>
     </div>
   </div>
+  <div className="container"> 
+    <div className="experience-card">
+      <div className="experience-left">
+        <div className="testimonial">
+          <p className="stars">★★★★★</p>
+          <p>
+          Rugved developed responsive web modules with an eye for usability and performance. 
+          His focus on front-end optimization helped reduce load times and improve user engagement.
+          </p>
+          <img src={awaitingLogo} alt="Company Logo" className="company-icon-1"  /> 
+        </div>
+      </div>
+
+      <div className="experience-right">
+        <div className="experience-header">
+          <div>
+            <h3>Web Developer Intern</h3>
+            <p>📍 India | February 2022 – March 2022</p>
+          </div>
+      </div>
+
+
+        <h4>Responsibilities</h4>
+        <ul>
+          <li>Built 12+ dynamic pages using React.js and REST APIs, enhancing UX metrics by 20%.</li>
+          <li>Designed and normalized 10 SQL Server tables, improving query response time by 35%.</li>
+          <li>Collaborated in 3 Agile sprints to deliver UI components ahead of schedule.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 
