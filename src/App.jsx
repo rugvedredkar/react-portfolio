@@ -64,6 +64,14 @@ import muLogo from './assets/education/mu.png';
 //experience logo import
 import c2lLogo from './assets/experience/c2l.png';
 import awaitingLogo from './assets/experience/awaiting.png';
+import btLogo from './assets/experience/bt.png';
+
+//certifications logo import
+import awsLogo from './assets/certifications/aws.png';
+import ucdLogo from './assets/certifications/ucd.png';
+import uomLogo from './assets/certifications/uom.png';
+import googleLogo from './assets/certifications/google.png';
+import tcsLogo from './assets/certifications/tcs.png';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -74,28 +82,25 @@ function App() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const experienceRef = useRef(null);
+  const experienceContainerRef = useRef(null);
 
-useEffect(() => {
-  const handleScroll = () => {
-    const section = experienceRef.current;
-    if (!section) return;
-
-    const experienceCard = section.querySelector('.experience-card');
-    if (!experienceCard) return;
-
-    const rect = experienceCard.getBoundingClientRect();
-    const triggerPoint = window.innerHeight * 0.8;
-
-    if (rect.top < triggerPoint) {
-      experienceCard.classList.add('visible');
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      const wrapper = experienceContainerRef.current;
+      if (!wrapper) return;
+  
+      const rect = wrapper.getBoundingClientRect();
+      const triggerPoint = window.innerHeight * 0.7;
+  
+      if (rect.top < triggerPoint) {
+        wrapper.classList.add('visible');
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
 
   useEffect(() => {
@@ -283,74 +288,102 @@ useEffect(() => {
         </div>
       </section>
 
-      {/* ===== EXPERIENCE SECTION ===== */}
-<section id="experience" className="experience" ref={experienceRef}>
+{/* ===== EXPERIENCE SECTION ===== */}
+<section id="experience" className="experience">
   <div className="container">
     <h2 className="section-title">Experience</h2>
 
-    <div className="experience-card">
-      <div className="experience-left">
-        <div className="testimonial">
-          <p className="stars">★★★★★</p>
-          <p>
-          Rugved played a key role in automating backend processes and improving database efficiency. 
-          His structured approach and debugging skills reduced data issues across multiple releases.
-          </p>
-          <img src={c2lLogo} alt="Company Logo" className="company-icon"  />   </div>
-      </div>
-
-      <div className="experience-right">
-        <div className="experience-header">
-          <div>
-            <h3>Full Stack Software Developer</h3>
-            <p>📍 India | November 2022 – August 2024</p>
+    <div className="experience-cards-wrapper" ref={experienceContainerRef}>
+      <div className="experience-card">
+        <div className="experience-left">
+          <div className="testimonial">
+            <p className="stars">★★★★★</p>
+            <p>
+            Rugved played a key role in automating backend processes and improving database efficiency. 
+            His structured approach and debugging skills reduced data issues across multiple releases.
+            </p>
+            <img src={c2lLogo} alt="Company Logo" className="company-icon"  />
           </div>
         </div>
 
-        <h4>Responsibilities</h4>
-        <ul>
-          <li>Built backend modules in Java, improving system performance by 25%.</li>
-          <li>Optimized 50+ SQL queries, cutting report generation time by 60%. </li>
-          <li>Debugged client issues via Jira, improving delivery timelines by 40%.</li>
-          <li>Led a 3-member team to deliver Data Migration for 10M+ policy records in Drop 1.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div className="container"> 
-    <div className="experience-card">
-      <div className="experience-left">
-        <div className="testimonial">
-          <p className="stars">★★★★★</p>
-          <p>
-          Rugved developed responsive web modules with an eye for usability and performance. 
-          His focus on front-end optimization helped reduce load times and improve user engagement.
-          </p>
-          <img src={awaitingLogo} alt="Company Logo" className="company-icon-1"  /> 
+        <div className="experience-right">
+          <div className="experience-header">
+            <div>
+              <h3>Full Stack Software Developer</h3>
+              <p>📍 India | November 2022 – August 2024</p>
+            </div>
+          </div>
+
+          <h4>Responsibilities</h4>
+          <ul>
+            <li>Built backend modules in Java, improving system performance by 25%.</li>
+            <li>Optimized 50+ SQL queries, cutting report generation time by 60%.</li>
+            <li>Debugged client issues via Jira, improving delivery timelines by 40%.</li>
+            <li>Led a 3-member team to deliver Data Migration for 10M+ policy records in Drop 1.</li>
+          </ul>
         </div>
       </div>
 
-      <div className="experience-right">
-        <div className="experience-header">
-          <div>
-            <h3>Web Developer Intern</h3>
-            <p>📍 India | February 2022 – March 2022</p>
+      <div className="experience-card">
+        <div className="experience-left">
+          <div className="testimonial">
+            <p className="stars">★★★★★</p>
+            <p>
+            Rugved developed responsive web modules with an eye for usability and performance. 
+            His focus on front-end optimization helped reduce load times and improve user engagement.
+            </p>
+            <img src={awaitingLogo} alt="Company Logo" className="company-icon-1"  /> 
           </div>
+        </div>
+
+        <div className="experience-right">
+          <div className="experience-header">
+            <div>
+              <h3>Web Developer Intern</h3>
+              <p>📍 India | February 2022 – March 2022</p>
+            </div>
+          </div>
+
+          <h4>Responsibilities</h4>
+          <ul>
+            <li>Built 12+ dynamic pages using React.js and REST APIs, enhancing UX metrics by 20%.</li>
+            <li>Designed and normalized 10 SQL Server tables, improving query response time by 35%.</li>
+            <li>Collaborated in 3 Agile sprints to deliver UI components ahead of schedule.</li>
+          </ul>
+        </div>
       </div>
 
+      <div className="experience-card">
+        <div className="experience-left">
+          <div className="testimonial">
+            <p className="stars">★★★★★</p>
+            <p>
+            Rugved automated reporting for 5 departments and reduced manual data preparation by 40%. 
+            His dashboards helped executives make faster, data-driven decisions.
+            </p>
+            <img src={btLogo} alt="Company Logo" className="company-icon-2"  /> 
+          </div>
+        </div>
 
-        <h4>Responsibilities</h4>
-        <ul>
-          <li>Built 12+ dynamic pages using React.js and REST APIs, enhancing UX metrics by 20%.</li>
-          <li>Designed and normalized 10 SQL Server tables, improving query response time by 35%.</li>
-          <li>Collaborated in 3 Agile sprints to deliver UI components ahead of schedule.</li>
-        </ul>
+        <div className="experience-right">
+          <div className="experience-header">
+            <div>
+              <h3>Data Analyst Intern</h3>
+              <p>📍 India | June 2022 – August 2022</p>
+            </div>
+          </div>
+
+          <h4>Responsibilities</h4>
+          <ul>
+            <li>Cleaned and analyzed 250k+ records using Python (Pandas, Matplotlib).</li>
+            <li>Built 6 Excel dashboards, automating weekly performance reports.</li>
+            <li>Reduced report preparation time from 5 hours to 2 hours per cycle.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-
 </section>
-
 
 {/* ===== EDUCATION SECTION ===== */}
 <section id="education" className="education">
@@ -410,31 +443,65 @@ useEffect(() => {
           <h2 className="section-title">Certifications</h2>
           <div className="cert-grid">
             <div className="cert-card">
-              <div className="cert-icon">🎓</div>
-              <h3>AWS Certified Developer</h3>
+              <img src={awsLogo} alt="certification Logo" className="cert-icon"  /> 
+              <h3>AWS Cloud Foundation</h3>
               <p className="cert-issuer">Issued by: Amazon Web Services</p>
-              <p className="cert-date">Issued on: March 2023</p>
+              <p className="cert-date">Issued on: April 2025</p>
+              <a href="https://www.credly.com/badges/8d32d932-514f-403a-8266-e792085d3810" target="_blank" rel="noopener noreferrer" className="btn-credential">
+              See Credential
+              </a>
+
             </div>
 
             <div className="cert-card">
-              <div className="cert-icon">🎓</div>
-              <h3>React Professional Certificate</h3>
-              <p className="cert-issuer">Issued by: Meta</p>
-              <p className="cert-date">Issued on: January 2023</p>
+            <img src={awsLogo} alt="certification Logo" className="cert-icon"  /> 
+              <h3>AWS Cloud Security</h3>
+              <p className="cert-issuer">Issued by: Amazon Web Services</p>
+              <p className="cert-date">Issued on: April 2025</p>
+              <a href="https://www.credly.com/earner/earned/badge/0063b079-c730-4bfe-bf45-363ae6ec1624" target="_blank" rel="noopener noreferrer" className="btn-credential">
+              See Credential
+              </a>
+
             </div>
 
             <div className="cert-card">
-              <div className="cert-icon">🎓</div>
-              <h3>Full Stack Web Development</h3>
-              <p className="cert-issuer">Issued by: Coursera</p>
-              <p className="cert-date">Issued on: November 2022</p>
+            <img src={tcsLogo} alt="certification Logo" className="cert-icon"  /> 
+              <h3>Machine Learning</h3>
+              <p className="cert-issuer">Issued by: Tata Consultancy Services</p>
+              <p className="cert-date">Issued on: July 2021</p>
+              <a href="https://drive.google.com/file/d/1Dr1wqdRqdC_7mb-5pRv0pzTDmZzVgYZA/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn-credential">
+              See Credential
+              </a>
             </div>
 
             <div className="cert-card">
-              <div className="cert-icon">🎓</div>
-              <h3>Python for Data Science</h3>
-              <p className="cert-issuer">Issued by: IBM</p>
-              <p className="cert-date">Issued on: August 2022</p>
+            <img src={ucdLogo} alt="certification Logo" className="cert-icon"  /> 
+              <h3>SQL for Data Science</h3>
+              <p className="cert-issuer">Issued by: University of California, Davis</p>
+              <p className="cert-date">Issued on: September 2021</p>
+              <a href="https://www.coursera.org/account/accomplishments/verify/4KZUHC8DCBSR" target="_blank" rel="noopener noreferrer" className="btn-credential">
+              See Credential
+              </a>
+            </div>
+
+            <div className="cert-card">
+            <img src={uomLogo} alt="certification Logo" className="cert-icon"  /> 
+              <h3>Applied Machine Learning</h3>
+              <p className="cert-issuer">Issued by: University of Michigan</p>
+              <p className="cert-date">Issued on: September 2020</p>
+              <a href="https://www.coursera.org/account/accomplishments/verify/2WS7WEQ5J39M" target="_blank" rel="noopener noreferrer" className="btn-credential">
+              See Credential
+              </a>
+            </div>
+
+            <div className="cert-card">
+            <img src={googleLogo} alt="certification Logo" className="cert-icon"  /> 
+              <h3>Crash Course on Python</h3>
+              <p className="cert-issuer">Issued by: Google</p>
+              <p className="cert-date">Issued on: July 2020</p>
+              <a href="https://www.coursera.org/account/accomplishments/verify/QD4H6U6RJ4C5" target="_blank" rel="noopener noreferrer" className="btn-credential">
+              See Credential
+              </a>
             </div>
           </div>
         </div>
@@ -452,7 +519,7 @@ useEffect(() => {
                 Feel free to reach out!
               </p>
               <div className="contact-details">
-                <p>📧 rugvedredkar02@gmail.com.com</p>
+                <p>📧 rugvedredkar02@gmail.com</p>
                 <p>📍 chicago, United States</p>
               </div>
             </div>
