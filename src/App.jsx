@@ -1,8 +1,12 @@
 
+
 import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Typed from "typed.js";
 import hero from './assets/hero.png';
+import ProjectDetail from './ProjectDetails';
+import './ProjectDetails.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // Import skill icons
 import awsIcon from './assets/skills/aws.png';
@@ -73,7 +77,7 @@ import uomLogo from './assets/certifications/uom.png';
 import googleLogo from './assets/certifications/google.png';
 import tcsLogo from './assets/certifications/tcs.png';
 
-function App() {
+function HomePage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -154,7 +158,7 @@ function App() {
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
-          <div className="logo">Portfolio</div>
+          <Link to="/" className="logo">Portfolio</Link>
           <ul className="nav-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -217,7 +221,7 @@ function App() {
                 <span className="tag">Java</span>
                 <span className="tag">SQL Server</span>
               </div>
-              <a href="#" className="project-link">View Project →</a>
+              <Link to="/project/data-migration" className="project-link">View Project →</Link>
             </div>
 
             <div className="project-card">
@@ -231,7 +235,7 @@ function App() {
                 <span className="tag">SQLite3</span>
                 <span className="tag">AWS</span>
               </div>
-              <a href="#" className="project-link">View Project →</a>
+              <Link to="/project/schedulerr" className="project-link">View Project →</Link>
             </div>
 
             <div className="project-card">
@@ -243,8 +247,8 @@ function App() {
                 <span className="tag">Data Visualization</span>
                 <span className="tag">Python</span>
               </div>
-              <a href="#" className="project-link">View Project →</a>
-            </div>
+              <Link to="/project/united-airlines" className="project-link">View Project →</Link>            
+              </div>
 
             <div className="project-card">
               <div className="project-image">🤖</div>
@@ -255,7 +259,7 @@ function App() {
                 <span className="tag">OpenCV</span>
                 <span className="tag">Image Processing</span>
               </div>
-              <a href="#" className="project-link">View Project →</a>
+              <Link to="/project/invisible-cloak" className="project-link">View Project →</Link>
             </div>
           </div>
         </div>
@@ -593,10 +597,21 @@ function App() {
     <p className="footer-right">© 2025 Rugved Redkar. All rights reserved.</p>
   </div>
 </footer>
-
-
     </div>
   );
 }
 
+// Replace the entire App function with:
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/project/:projectId" element={<ProjectDetail />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
 export default App;
