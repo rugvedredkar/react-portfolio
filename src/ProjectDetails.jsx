@@ -46,7 +46,7 @@ function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="project-detail">
+      <div className="project-detail page-transition">
         <nav className="navbar">
           <div className="nav-container">
             <Link to="/" className="logo">Portfolio</Link>
@@ -62,13 +62,7 @@ function ProjectDetail() {
   }
 
   return (
-    <div className="project-detail">
-      <div className="animated-bg">
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
-      </div>
-
+    <div className="project-detail page-transition">
       <nav className="navbar">
         <div className="nav-container">
           <Link to="/" className="logo">Portfolio</Link>

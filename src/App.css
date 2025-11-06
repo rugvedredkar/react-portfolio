@@ -7,18 +7,18 @@
 }
 
 :root {
-  --primary-color: #8b5cf6;
-  --secondary-color: #a78bfa;
-  --accent-color: #ec4899;
+  --primary-color: #9d6fff;     /* Vibrant purple */
+  --secondary-color: #7c3aed;   /* Deep purple */
+  --accent-color: #a855f7;      /* Bright purple accent */
   --text-color: #e5e7eb;
   --text-light: #9ca3af;
-  --bg-color: #0a0a0a;
-  --bg-light: #111111;
-  --bg-card: #1a1a1a;
-  --border-color: #2a2a2a;
+  --bg-color: #0a0520;          /* Very dark purple-navy */
+  --bg-light: #120a2e;          /* Dark purple */
+  --bg-card: #1a0f3d;           /* Deep purple card */
+  --border-color: #2d1b5e;      /* Purple border */
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
-  --glow: 0 0 20px rgba(139, 92, 246, 0.3);
+  --glow: 0 0 20px rgba(157, 111, 255, 0.5);
 }
 
 body {
@@ -105,7 +105,7 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(10, 10, 10, 0.8);
+  background: #0a0520;   
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;

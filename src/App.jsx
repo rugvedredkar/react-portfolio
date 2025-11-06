@@ -4,9 +4,11 @@ import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Typed from "typed.js";
 import hero from './assets/hero.png';
-import ProjectDetail from './ProjectDetails';
 import './ProjectDetails.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ProjectDetail from './ProjectDetails';
+import ScrollToTop from './ScrollToTop';
+
 
 // Import skill icons
 import awsIcon from './assets/skills/aws.png';
@@ -58,7 +60,7 @@ const skillsData = [
   { name: 'Google Cloud', icon: gcIcon, category: 'cloud', isImage: true },
   { name: 'GitHub', icon: githubIcon, category: 'tools', isImage: true },
   { name: 'Docker', icon: dockerIcon, category: 'tools', isImage: true }
-  
+    
 ];
 
 // university logo import 
@@ -604,7 +606,8 @@ function HomePage() {
 // Replace the entire App function with:
 function App() {
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true }}>
+      <ScrollToTop />
       <div className="App">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -615,3 +618,4 @@ function App() {
   );
 }
 export default App;
+
