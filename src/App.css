@@ -267,7 +267,7 @@ html {
 }
 
 .hero-title {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
   line-height: 1.2;
@@ -359,6 +359,7 @@ html {
   }
 }
 
+
 /* ========== PROJECTS SECTION ========== */
 .projects {
   padding: 6rem 0;
@@ -369,78 +370,129 @@ html {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr); /* Changed from auto-fit to fixed 2 columns */
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
-
 .project-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 2.5rem;
-  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
+  height: 400px;
+  transition: all 0.4s ease;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  border-color: var(--primary-color);
-  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4);
 }
 
-.project-image {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  border-radius: 16px;
+/* Background Image */
+.project-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-bg-image {
+  transform: scale(1.1);
+  filter: blur(2px);
+}
+
+/* Overlay that appears on hover */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 5, 32, 0.95);
+  backdrop-filter: blur(10px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  padding: 2.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 10;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-overlay h4 {
+  color: var(--primary-color);
+  font-size: 2rem;
   margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
 }
 
-.project-card h3 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
-}
-
-.project-card p {
+.project-overlay p {
   color: var(--text-light);
+  text-align: center;
   margin-bottom: 1.5rem;
   line-height: 1.8;
+  font-size: 1.05rem;
 }
 
-.project-tags {
+.project-overlay .project-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.tag {
-  background: rgba(139, 92, 246, 0.1);
+.project-overlay .tag {
+  background: rgba(139, 92, 246, 0.2);
   color: var(--primary-color);
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--primary-color);
+}
+
+.project-overlay .btn {
+  margin-top: auto;
+}
+
+/* Remove old styles */
+.project-image {
+  display: none;
 }
 
 .project-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.3s ease;
+  display: none;
 }
 
-.project-link:hover {
-  transform: translateX(8px);
-  color: var(--accent-color);
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 968px) {
+  /* ... other styles ... */
+  
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column on tablets */
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* ... other styles ... */
+  
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+  }
 }
 
 /* ========== SKILLS SECTION - NEW ICON GRID ========== */

@@ -79,6 +79,13 @@ import uomLogo from './assets/certifications/uom.png';
 import googleLogo from './assets/certifications/google.png';
 import tcsLogo from './assets/certifications/tcs.png';
 
+//projects images import
+import dataMigration from './assets/projects/dataMigration.png';
+import meeting from './assets/projects/meeting.png';
+import gloak from './assets/projects/gloak.png';
+import data from './assets/projects/data.png';
+
+
 function HomePage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -195,8 +202,8 @@ function HomePage() {
           </p>
 
           <p className="hero-description">
-            I create beautiful and functional web experiences. Passionate about 
-            building innovative solutions that make a difference.
+          I develop technology-driven solutions that are reliable and user-focused. 
+          I’m committed to delivering work that supports business goals and creates real value.
           </p>
 
           <div className="hero-buttons">
@@ -212,61 +219,69 @@ function HomePage() {
 
       {/* Projects Section */}
       <section id="projects" className="projects">
-        <div className="container">
-          <h2 className="section-title">Projects I've Worked On</h2>
-          <div className="projects-grid">
-            <div className="project-card">
-              <div className="project-image">📱</div>
-              <h3>Data Migration</h3>
-              <p>A backend automation project that streamlined large-scale data transfer between client databases and the Distribution Management System.</p>
-              <div className="project-tags">
-                <span className="tag">Java</span>
-                <span className="tag">SQL Server</span>
-              </div>
-              <Link to="/project/data-migration" className="project-link">View Project →</Link>
-            </div>
-
-            <div className="project-card">
-              <div className="project-image">🎨</div>
-              <h3>Schedulerr.com</h3>
-              <p>A full-stack meeting scheduling application with real-time conflict detection, Google OAuth login, and cloud deployment for seamless collaboration.</p>
-              <div className="project-tags">
-                <span className="tag">React</span>
-                <span className="tag">CSS3</span>
-                <span className="tag">Flask</span>
-                <span className="tag">SQLite3</span>
-                <span className="tag">AWS</span>
-              </div>
-              <Link to="/project/schedulerr" className="project-link">View Project →</Link>
-            </div>
-
-            <div className="project-card">
-              <div className="project-image">📊</div>
-              <h3>United Airlines Analytics Dashboard</h3>
-              <p>A Tableau dashboard analyzing 1M+ 2023 flight records to evaluate delays and cancellations, revealing United's 10% higher delay rate and key improvement insights.</p>
-              <div className="project-tags">
-                <span className="tag">Tableau</span>
-                <span className="tag">Data Visualization</span>
-                <span className="tag">Python</span>
-              </div>
-              <Link to="/project/united-airlines" className="project-link">View Project →</Link>            
-              </div>
-
-            <div className="project-card">
-              <div className="project-image">🤖</div>
-              <h3>InvisibleCloak</h3>
-              <p>A computer vision Python project that overlays a dynamic invisibility effect using real-time background subtraction and chroma key techniques to mask objects in video.</p>
-              <div className="project-tags">
-                <span className="tag">Python</span>
-                <span className="tag">OpenCV</span>
-                <span className="tag">Image Processing</span>
-              </div>
-              <Link to="/project/invisible-cloak" className="project-link">View Project →</Link>
-            </div>
+  <div className="container">
+    <h2 className="section-title">Projects I've Worked On</h2>
+    <div className="projects-grid">
+      
+      <div className="project-card">
+        <img src={dataMigration} alt="Data Migration" className="project-bg-image" />
+        <div className="project-overlay">
+          <h4>Data Migration Project</h4>
+          <p>Automated migration of 10M+ insurance policy records with 99.9% accuracy. Reduced processing time by 60% through robust ETL pipeline implementation.</p>
+          <div className="project-tags">
+            <span className="tag">Java</span>
+            <span className="tag">SQL Server</span>
+            <span className="tag">ETL</span>
           </div>
+          <Link to="/project/data-migration" className="btn btn-primary">View Details</Link>
         </div>
-      </section>
+      </div>
 
+      <div className="project-card">
+        <img src={meeting} alt="Schedulerr.com" className="project-bg-image" />
+        <div className="project-overlay">
+          <h4>Schedulerr.com</h4>
+          <p>A full-stack meeting scheduling application with real-time conflict detection, Google OAuth login, and cloud deployment for seamless collaboration.</p>
+          <div className="project-tags">
+            <span className="tag">React</span>
+            <span className="tag">Flask</span>
+            <span className="tag">AWS</span>
+          </div>
+          <Link to="/project/schedulerr" className="btn btn-primary">View Details</Link>
+        </div>
+      </div>
+
+      <div className="project-card">
+        <img src={data} alt="United Airlines Dashboard" className="project-bg-image" />
+        <div className="project-overlay">
+          <h4>United Airlines Analytics</h4>
+          <p>A Tableau dashboard analyzing 1M+ flight records to evaluate delays and cancellations, revealing key improvement insights.</p>
+          <div className="project-tags">
+            <span className="tag">Tableau</span>
+            <span className="tag">Python</span>
+            <span className="tag">Data Viz</span>
+          </div>
+          <Link to="/project/united-airlines" className="btn btn-primary">View Details</Link>
+        </div>
+      </div>
+
+      <div className="project-card">
+        <img src={gloak} alt="InvisibleCloak" className="project-bg-image" />
+        <div className="project-overlay">
+          <h4>InvisibleCloak</h4>
+          <p>A computer vision project with real-time background subtraction and chroma key techniques to create dynamic invisibility effects.</p>
+          <div className="project-tags">
+            <span className="tag">Python</span>
+            <span className="tag">OpenCV</span>
+            <span className="tag">CV</span>
+          </div>
+          <Link to="/project/invisible-cloak" className="btn btn-primary">View Details</Link>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* Skills Section - New Icon Grid Layout */}
       <section id="skills" className="skills">
         <div className="container">
